@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什麼？</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ 今天吃什麼？</h1>
+            <p>讓我們幫你決定今天的美食！</p>
+        </header>
+
+        <main>
+            <div class="food-display">
+                <div class="food-card" id="foodCard">
+                    <div class="food-image">
+                        <img id="foodImage" src="" alt="美食圖片" />
+                    </div>
+                    <div class="food-info">
+                        <h2 id="foodName">點擊按鈕開始抽選！</h2>
+                        <p id="foodDescription">期待美食的到來...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="randomButton" class="random-btn">
+                    <span class="btn-text">🎲 隨機選擇</span>
+                </button>
+                <button id="againButton" class="again-btn" style="display: none;">
+                    <span class="btn-text">🔄 再來一次</span>
+                </button>
+            </div>
+
+            <div class="food-list">
+                <h3>美食選項：</h3>
+                <div class="food-grid" id="foodGrid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>💡 餓了嗎？讓我們為你挑選美味的食物！</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

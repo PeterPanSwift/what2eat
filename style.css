@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food-display {
+    margin-bottom: 40px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 400px;
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.food-image {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.food-image img:hover {
+    transform: scale(1.05);
+}
+
+.food-info h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.controls {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.random-btn,
+.again-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+    min-width: 160px;
+}
+
+.again-btn {
+    background: linear-gradient(45deg, #4ecdc4, #26a69a);
+    box-shadow: 0 5px 15px rgba(38, 166, 154, 0.3);
+}
+
+.random-btn:hover,
+.again-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+}
+
+.again-btn:hover {
+    box-shadow: 0 8px 25px rgba(38, 166, 154, 0.4);
+}
+
+.random-btn:active,
+.again-btn:active {
+    transform: translateY(0);
+}
+
+.btn-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.random-btn:hover .btn-text,
+.again-btn:hover .btn-text {
+    transform: scale(1.05);
+}
+
+.food-list {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.food-list h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.food-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.food-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    border-color: #667eea;
+}
+
+.food-item.selected {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    transform: scale(1.05);
+}
+
+.food-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.food-item span {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* 載入動畫 */
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* 選中動畫 */
+.selected-animation {
+    animation: celebrate 0.6s ease-in-out;
+}
+
+@keyframes celebrate {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    75% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .food-card {
+        min-width: auto;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .food-image {
+        width: 250px;
+        height: 160px;
+    }
+
+    .food-info h2 {
+        font-size: 1.5em;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .random-btn,
+    .again-btn {
+        width: 200px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
